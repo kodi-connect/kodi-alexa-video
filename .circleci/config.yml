@@ -26,6 +26,6 @@ jobs:
           name: Run tests
           command: yarn test
 
-      -run:
+      - run:
           name: Build package
           command: yarn package
