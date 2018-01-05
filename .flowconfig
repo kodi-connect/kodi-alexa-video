@@ -1,0 +1,11 @@
+[ignore]
+
+[include]
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowSuppress
+module.system=haste
+
+[libs]
+./flow-typed
+./.flowtypes

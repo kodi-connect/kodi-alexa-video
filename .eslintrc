@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "eslint-config-airbnb-base",
+    "plugin:flowtype/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "max-len": [1, 160],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true, "optionalDependencies": false, "peerDependencies": false }],
+    "import/prefer-default-export": 0,
+    "no-console": 0,
+    "no-restricted-syntax": 0,
+    "no-await-in-loop": 0
+  },
+  "plugins": [
+    "flowtype"
+  ]
+}
