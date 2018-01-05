@@ -3,6 +3,7 @@ FROM node:6.10
 RUN apt-get update && \
   apt-get -y install \
     zip \
+    groff \
     libssl-dev \
     python-pip \
     python-dev && \

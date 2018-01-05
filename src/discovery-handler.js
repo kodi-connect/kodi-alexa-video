@@ -4,7 +4,7 @@ import _ from 'lodash';
 import uuid from 'uuid/v4';
 import axios from 'axios';
 
-const kodiConnectUrl = 'https://mactunnel.kislan.sk';
+const kodiConnectUrl = 'https://kodiconnect.kislan.sk';
 
 async function getDevices(accessToken) {
   console.time('searchAndPlay');

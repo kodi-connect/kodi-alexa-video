@@ -13,7 +13,7 @@ const event = {
     payload: {
       scope: {
         type: 'BearerToken',
-        token: '888196987f14f62783f6baca4c6599b1f463970c',
+        token: 'd033e0d07276586afd82114a58814ada2c886e7e',
       },
     },
   },

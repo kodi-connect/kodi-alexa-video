@@ -236,7 +236,7 @@ async function findTvShowNextUnwatchedEpisode(kodiConnString, requestedTitles) {
 //   return { endpoint, header, payload };
 // }
 
-const kodiConnectUrl = 'https://mactunnel.kislan.sk';
+const kodiConnectUrl = 'https://kodiconnect.kislan.sk';
 
 async function searchAndPlay(requestedTitles, accessToken) {
   const request = { type: 'command', commandType: 'searchAndPlay', requestedTitles };
