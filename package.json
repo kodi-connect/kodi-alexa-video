@@ -7,15 +7,13 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf build",
-    "watch:build": "babel src -d build --copy-files --watch --source-maps inline",
-    "watch:run": "wait-on build/index.js && nodemon --delay 1 build/index.js",
-    "watch": "npm-run-all --parallel watch:*",
+    "watch": "babel src -d build --copy-files --watch --source-maps inline",
     "build": "yarn run clean && babel src -d build --source-maps inline",
     "package": "./build-package.sh",
     "deploy": "aws lambda update-function-code --function-name kodi-video-dev --zip-file fileb://package.zip",
-    "test:eslint": "eslint src",
+    "test:lint": "eslint src",
     "test:flow": "flow src",
-    "test:jest": "jest src"
+    "test": "npm-run-all --sequential test:*"
   },
   "dependencies": {
     "axios": "^0.17.1",
