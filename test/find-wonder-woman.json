@@ -1,0 +1,86 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.d12d4149-7f86-5433-b3ba-7cc4374dad61",
+                  "value": "Wonder Woman",
+                  "externalIds": {
+                      "avc_vending_de": "amzn1.dv.gti.1eae1b95-788e-dfa1-e851-886ac1dde49f",
+                      "ENTITY_ID": "0",
+                      "imdb": "tt0451279",
+                      "avc_vending_us": "amzn1.dv.gti.e0ae18c6-ae09-efc0-c858-da53124ac48e",
+                      "ontv": "MV010179950000",
+                      "webedia": "230592",
+                      "tms": "MV010179950000",
+                      "avc_vending_gb": "amzn1.dv.gti.aaae19de-3562-7248-7e66-4c8b409428b0",
+                      "gti": "amzn1.dv.gti.aaae19de-3562-7248-7e66-4c8b409428b0",
+                      "ontv_de": "MV009948480000"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.75f43be5-5f87-5dd1-808e-bb80cea4d30a",
+                  "value": "Wonder Woman",
+                  "externalIds": {
+                      "ENTITY_ID": "1",
+                      "imdb": "tt0074074",
+                      "avc_vending_us": "amzn1.dv.gti.34a9f750-ed3c-a709-a5b2-32795c0e1672",
+                      "ontv": "SH000048340000",
+                      "avc_vending_gb": "amzn1.dv.gti.7ca9f665-c5e3-2b51-8427-017218c339ab",
+                      "tms": "SH000048340000",
+                      "gti": "amzn1.dv.gti.7ca9f665-c5e3-2b51-8427-017218c339ab"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.3bc76a74-1472-5c84-90ce-21231c639e01",
+                  "value": "Wonder Woman",
+                  "externalIds": {
+                      "ENTITY_ID": "2",
+                      "imdb": "tt1740828"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.ff6111da-3d95-591b-8d12-c739fcdc6b95",
+                  "value": "Wonder Woman",
+                  "externalIds": {
+                      "avc_vending_de": "amzn1.dv.gti.feaaf31e-dbdb-a945-5c5a-c581be4868d9",
+                      "ENTITY_ID": "3",
+                      "imdb": "tt1186373",
+                      "ontv": "MV010027660000",
+                      "tms": "MV010027660000",
+                      "avc_vending_gb": "amzn1.dv.gti.0ea9f67a-2fee-9cab-e820-0dc80ae7014f",
+                      "gti": "amzn1.dv.gti.feaaf31e-dbdb-a945-5c5a-c581be4868d9"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.538c2c26-c7b1-54a6-aadf-98669daed45e",
+                  "value": "Wonder Woman",
+                  "externalIds": {
+                      "ENTITY_ID": "4",
+                      "imdb": "tt3439676"
+                  }
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "2a31fa3b-a87c-4396-bc00-d9abbaf001de",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndDisplayResults",
+          "correlationToken": "d30c686f-15b2-4728-8e2b-896ddf64af38"
+      },
+      "endpoint": {
+          "cookie": {},
+          "endpointId": "<id>",
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          }
+      }
+  }
+}

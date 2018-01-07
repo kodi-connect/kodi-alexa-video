@@ -1,0 +1,128 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.c832bca4-210b-57a0-8db8-4097432e02c3",
+                  "value": "Arnold Schwarzenegger",
+                  "externalIds": {
+                      "ENTITY_ID": "0"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.91970241-3df5-5d37-9d2a-6f896f7ed123",
+                  "value": "Patrick Schwarzenegger",
+                  "externalIds": {
+                      "ENTITY_ID": "1"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.1da4775e-46b6-5ecb-a5de-8bcbf034ef94",
+                  "value": "Patrick M. Knapp Schwarzenegger",
+                  "externalIds": {
+                      "ENTITY_ID": "2"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.e987c175-b598-5a3b-8dec-0ef5757fee2e",
+                  "value": "Arnold",
+                  "externalIds": {
+                      "ENTITY_ID": "3"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.ed15c325-139b-595c-8f49-d79eb198ff73",
+                  "value": "Arnold",
+                  "externalIds": {
+                      "ENTITY_ID": "4"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.e24441b2-5c3f-525a-a9b2-784c93da951f",
+                  "value": "Total Recall",
+                  "externalIds": {
+                      "avc_vending_de": "amzn1.dv.gti.82a9f6b4-aa14-8448-fdb8-4d9ae0906ff2",
+                      "fxnow": "FX_Firetv_Movie_Total_Recall_HD_Clean_AUTH_REDELIVER",
+                      "ENTITY_ID": "0",
+                      "imdb": "tt1386703",
+                      "netflix_de": "70219498",
+                      "ontv": "MV003677600000",
+                      "tms": "MV006730810000",
+                      "avc_vending_gb": "amzn1.dv.gti.e6aa77c8-3bc0-0e54-3cb0-5433168dc47c",
+                      "ontv_gb": "MV004423960000",
+                      "gti": "amzn1.dv.gti.82a9f6b4-aa14-8448-fdb8-4d9ae0906ff2",
+                      "ontv_de": "MV006730810000",
+                      "netflix_jp": "70219498"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.5ea9dcf6-c1f3-5add-9d96-f535d85b6123",
+                  "value": "Total Recall",
+                  "externalIds": {
+                      "avc_vending_de": "amzn1.dv.gti.fea9f6b5-a1dc-14dc-17c8-bfcf84612268",
+                      "ENTITY_ID": "1",
+                      "imdb": "tt0100802",
+                      "avc_vending_us": "amzn1.dv.gti.58a9f6f8-8b20-4918-b873-3533fe35154a",
+                      "ontv": "MV000696530000",
+                      "tms": "MV006270210000",
+                      "avc_vending_gb": "amzn1.dv.gti.78a9f670-aa8e-fd70-7395-3751d55fcc0b",
+                      "ontv_gb": "MV002926240000",
+                      "gti": "amzn1.dv.gti.58a9f6f8-8b20-4918-b873-3533fe35154a",
+                      "ontv_de": "MV006270210000"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.71c7f0a3-a3bd-5a13-8371-5c3719f6d046",
+                  "value": "Total Recall",
+                  "externalIds": {
+                      "ENTITY_ID": "2",
+                      "imdb": "tt1386703",
+                      "avc_vending_us": "amzn1.dv.gti.c6a9f721-e21f-2e7c-bfff-67706348ee01",
+                      "gti": "amzn1.dv.gti.c6a9f721-e21f-2e7c-bfff-67706348ee01"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.fdc1c118-7b8d-5afa-82b4-90725c78d3f1",
+                  "value": "Total Recall",
+                  "externalIds": {
+                      "ENTITY_ID": "3",
+                      "imdb": "tt0988932"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.e7ea4cea-16d2-55ad-8f27-636812b02a07",
+                  "value": "Total Recall",
+                  "externalIds": {
+                      "ENTITY_ID": "4",
+                      "c_spire_tv_us": "tms:12531"
+                  }
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "d88cc11b-5392-4976-80a2-3aae599861fc",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndDisplayResults",
+          "correlationToken": "994cfce5-6ff0-4ecf-8e01-5bb12a631057"
+      },
+      "endpoint": {
+          "endpointId": "<id>",
+          "cookie": {},
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          }
+      }
+  }
+}

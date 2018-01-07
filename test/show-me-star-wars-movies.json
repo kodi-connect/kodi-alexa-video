@@ -1,0 +1,35 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Franchise",
+                  "uri": "entity://avers/franchise/Star+Wars",
+                  "value": "Star Wars",
+                  "externalIds": {
+                      "ENTITY_ID": "0"
+                  }
+              },
+              {
+                  "type": "MediaType",
+                  "value": "Movie"
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "1c30cf36-851d-4faa-8555-6eb796171ff5",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndDisplayResults",
+          "correlationToken": "0b0e9892-a518-453c-bd06-76e633467ebe"
+      },
+      "endpoint": {
+          "endpointId": "<id>",
+          "cookie": {},
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          }
+      }
+  }
+}

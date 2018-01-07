@@ -1,0 +1,67 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.a05c022b-ccc8-5008-88a2-3c376630a617",
+                  "value": "Channing Tatum",
+                  "externalIds": {
+                      "ENTITY_ID": "0"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.475312c8-446c-5eac-804b-688327e0cf15",
+                  "value": "Jaime Channing",
+                  "externalIds": {
+                      "ENTITY_ID": "1"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.f6fb11a2-3f8e-5a3e-b872-6eda933701c2",
+                  "value": "Channing Humphries",
+                  "externalIds": {
+                      "ENTITY_ID": "2"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.fc8a0565-5b0a-5967-8e83-d8ba67c4eeb4",
+                  "value": "Lacy Channing",
+                  "externalIds": {
+                      "ENTITY_ID": "3"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.95ec0c5b-e3f1-54d4-9bbc-ebd0b19778d8",
+                  "value": "Channing McKindra",
+                  "externalIds": {
+                      "ENTITY_ID": "4"
+                  }
+              },
+              {
+                  "type": "MediaType",
+                  "value": "Movie"
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "08d48e62-6b55-494f-a8d0-835d4b531871",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndDisplayResults",
+          "correlationToken": "dabe6f5b-6f74-41d1-a390-626e525e85aa"
+      },
+      "endpoint": {
+          "endpointId": "<id>",
+          "cookie": {},
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          }
+      }
+  }
+}

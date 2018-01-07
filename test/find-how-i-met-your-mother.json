@@ -1,0 +1,83 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.ffc328dc-488f-53ff-beb2-662405b12e12",
+                  "value": "How I Met Your Mother",
+                  "externalIds": {
+                      "avc_vending_de": "amzn1.dv.gti.bca9f6d1-54ec-5cc6-685c-fb2a9113097f",
+                      "ENTITY_ID": "0",
+                      "avc_vending_us": "amzn1.dv.gti.80a9f778-f07f-f271-3fc5-8f037ad370f5",
+                      "fxnow": "FX_Firetv_Show_7351ae9b-7953-40fc-a31f-84fb44d2f62c",
+                      "imdb": "tt0460649",
+                      "netflix_de": "70143824",
+                      "harvey": "799",
+                      "netflix_gb": "70143824",
+                      "ontv": "SH007537960000",
+                      "netflix_us": "70143824",
+                      "ontv_gb": "SH012707030000",
+                      "tms": "SH012707030000",
+                      "avc_vending_gb": "amzn1.dv.gti.20a9f694-8249-74ba-f2e1-3d4e3cd0f1dc",
+                      "gti": "amzn1.dv.gti.bca9f6d1-54ec-5cc6-685c-fb2a9113097f",
+                      "ontv_de": "SH019370400000",
+                      "playstation_vue": "SER_22560"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.4875f594-b63b-5a5b-84db-a561ead798fb",
+                  "value": "How I Met Your Mother",
+                  "externalIds": {
+                      "ENTITY_ID": "1",
+                      "c_spire_tv_us": "529"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.a4b60223-9d30-5caa-9278-a1cdc6bbe020",
+                  "value": "Goodbye How I Met Your Mother",
+                  "externalIds": {
+                      "ENTITY_ID": "2",
+                      "imdb": "tt3851610"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.9ba89730-cdca-5652-ad42-8b2828482fd2",
+                  "value": "How I Met Your Mother: Extras",
+                  "externalIds": {
+                      "ontv": "SH019015380000",
+                      "ENTITY_ID": "3",
+                      "tms": "SH019015380000"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.1ea7abd2-8128-51f6-abb4-5425dc04309e",
+                  "value": "How I Met Your Puppet Mother",
+                  "externalIds": {
+                      "ENTITY_ID": "4",
+                      "imdb": "tt3387902"
+                  }
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "c22e7968-287d-4327-a320-7b8f7715db4f",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndDisplayResults",
+          "correlationToken": "1b31f346-5c5a-4acf-8c68-0079861b388c"
+      },
+      "endpoint": {
+          "cookie": {},
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          },
+          "endpointId": "<id>"
+      }
+  }
+}

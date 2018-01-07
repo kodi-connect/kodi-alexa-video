@@ -1,0 +1,72 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/4",
+                  "value": "Comedy",
+                  "externalIds": {
+                      "ENTITY_ID": "0",
+                      "tms": "4"
+                  }
+              },
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/22",
+                  "value": "Comedy drama",
+                  "externalIds": {
+                      "ENTITY_ID": "1",
+                      "tms": "22"
+                  }
+              },
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/4",
+                  "value": "Comedy",
+                  "externalIds": {
+                      "ENTITY_ID": "2",
+                      "tms": "4"
+                  }
+              },
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/23",
+                  "value": "Musical comedy",
+                  "externalIds": {
+                      "ENTITY_ID": "3",
+                      "tms": "23"
+                  }
+              },
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/17",
+                  "value": "Romantic comedy",
+                  "externalIds": {
+                      "ENTITY_ID": "4",
+                      "tms": "17"
+                  }
+              },
+              {
+                  "type": "MediaType",
+                  "value": "Movie"
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "26a84891-d274-49e9-8e33-b4b7ed2acffc",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndDisplayResults",
+          "correlationToken": "3f98379b-f1cd-449d-8597-6c85091aee08"
+      },
+      "endpoint": {
+          "endpointId": "<id>",
+          "cookie": {},
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          }
+      }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.3c8c5452-07c1-5308-9a52-b5a80c4a4e00",
+                  "value": "Lindsay Lohan",
+                  "externalIds": {
+                      "ENTITY_ID": "0"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.52e2e683-c280-5257-af93-5d6ec272fa10",
+                  "value": "Ali Lohan",
+                  "externalIds": {
+                      "ENTITY_ID": "1"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.7b18ba93-690b-5155-b734-7bed28eb7964",
+                  "value": "Horst Lohan",
+                  "externalIds": {
+                      "ENTITY_ID": "2"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.d3987705-59a8-5505-82b1-3705cc01203b",
+                  "value": "Dina Lohan",
+                  "externalIds": {
+                      "ENTITY_ID": "3"
+                  }
+              },
+              {
+                  "type": "Actor",
+                  "uri": "entity://provider/actor/amzn1.p11cat.person.1b71127c-d7c7-5c38-9bbe-53591bf9f2fb",
+                  "value": "Treison Lohan",
+                  "externalIds": {
+                      "ENTITY_ID": "4"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.e46360ab-b705-5076-8b61-1d5c499da8a0",
+                  "value": "Girls",
+                  "externalIds": {
+                      "hbo_now": "girls",
+                      "avc_vending_de": "amzn1.dv.gti.82a9f6ba-6912-1e3c-4c12-282a59c765ed",
+                      "ENTITY_ID": "0",
+                      "hbo_go_us": "urn:hbo:series:GVU2d_A0NVFFvjSoJAT65",
+                      "avc_vending_us": "amzn1.dv.gti.02a9f747-8298-3d10-f661-7c0b07a92816",
+                      "hbo_now_version_two": "urn:hbo:series:GVU2d_A0NVFFvjSoJAT65",
+                      "imdb": "tt1723816",
+                      "ontv": "SH015401630000",
+                      "tms": "SH015401630000",
+                      "ontv_gb": "SH016838820000",
+                      "avc_vending_gb": "amzn1.dv.gti.a4a9f678-bcbc-e79c-8639-8d7d3bec38e2",
+                      "gti": "amzn1.dv.gti.82a9f6ba-6912-1e3c-4c12-282a59c765ed",
+                      "ontv_de": "SH019774380000"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.32724d7b-71a3-53b8-9f6b-7c5d0ae121a3",
+                  "value": "Girls",
+                  "externalIds": {
+                      "avc_vending_de": "amzn1.dv.gti.6ea9f6e4-2909-6864-69b7-dc00b7ad5447",
+                      "tubi_tv_us": "305323",
+                      "ENTITY_ID": "1",
+                      "imdb": "tt4074114",
+                      "avc_vending_us": "amzn1.dv.gti.eaa9f771-d889-e638-61d5-1cf356a750b3",
+                      "ontv": "MV000018010000",
+                      "tms": "MV000018010000",
+                      "avc_vending_gb": "amzn1.dv.gti.e6a9f68b-a843-1968-9d9a-5eb6cbd29e75",
+                      "gti": "amzn1.dv.gti.eaa9f771-d889-e638-61d5-1cf356a750b3"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.912ba911-2ff4-55ab-a0b2-01208e83c5c7",
+                  "value": "Girls",
+                  "externalIds": {
+                      "ENTITY_ID": "2",
+                      "imdb": "tt6223492"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.f37b3ac7-4d99-5130-b620-162c725b1c90",
+                  "value": "Girls",
+                  "externalIds": {
+                      "ENTITY_ID": "3",
+                      "imdb": "tt0981298"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.b788d549-6a23-54bf-9a2a-d978e6d56f20",
+                  "value": "Girls",
+                  "externalIds": {
+                      "ENTITY_ID": "4",
+                      "imdb": "tt4794564"
+                  }
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "570cd230-5941-4706-b7d0-4cbf6e5eceda",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndPlay",
+          "correlationToken": "83358e62-121e-4037-8abb-4485c1812078"
+      },
+      "endpoint": {
+          "endpointId": "<id>",
+          "cookie": {},
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          }
+      }
+  }
+}

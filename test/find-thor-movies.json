@@ -1,0 +1,35 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Franchise",
+                  "uri": "entity://avers/franchise/Thor",
+                  "value": "Thor",
+                  "externalIds": {
+                      "ENTITY_ID": "0"
+                  }
+              },
+              {
+                  "type": "MediaType",
+                  "value": "Movie"
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "b98e0ee5-0f69-44f7-acae-6fc58555bd51",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndDisplayResults",
+          "correlationToken": "eca341aa-39ad-4c2a-8574-86ef84638cbd"
+      },
+      "endpoint": {
+          "cookie": {},
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          },
+          "endpointId": "<id>"
+      }
+  }
+}

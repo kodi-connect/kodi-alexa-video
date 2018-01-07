@@ -1,0 +1,63 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/1",
+                  "value": "Action",
+                  "externalIds": {
+                      "ENTITY_ID": "0",
+                      "tms": "1"
+                  }
+              },
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/1",
+                  "value": "Action",
+                  "externalIds": {
+                      "ENTITY_ID": "1",
+                      "tms": "1"
+                  }
+              },
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/105",
+                  "value": "Action sports",
+                  "externalIds": {
+                      "ENTITY_ID": "2",
+                      "tms": "105"
+                  }
+              },
+              {
+                  "type": "Genre",
+                  "uri": "entity://provider/genre/1",
+                  "value": "Action",
+                  "externalIds": {
+                      "ENTITY_ID": "3",
+                      "tms": "1"
+                  }
+              },
+              {
+                  "type": "MediaType",
+                  "value": "Movie"
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "864f83c7-9601-42c7-8c71-a12d58baacaf",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndPlay",
+          "correlationToken": "b760b76a-e205-43d1-bbee-b130b6321ce9"
+      },
+      "endpoint": {
+          "cookie": {},
+          "endpointId": "<id>",
+          "scope": {
+              "token": "<token>",
+              "type": "BearerToken"
+          }
+      }
+  }
+}
