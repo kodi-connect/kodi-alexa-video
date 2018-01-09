@@ -2,3 +2,5 @@
 /build
 /.vscode
 /package.zip
+
+.DS_Store
