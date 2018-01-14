@@ -12,7 +12,7 @@
     "package": "./build-package.sh",
     "deploy": "aws lambda update-function-code --function-name kodi-video-dev --zip-file fileb://package.zip",
     "test:lint": "eslint src tests",
-    "test:flow": "flow src tests",
+    "test:flow": "flow src && flow tests",
     "test:unit": "jest tests",
     "test": "npm-run-all --sequential test:*"
   },
