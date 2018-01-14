@@ -1,0 +1,77 @@
+{
+  "directive": {
+      "payload": {
+          "entities": [
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.877b1535-c0e6-53f3-81fb-e8a40086b1b9",
+                  "value": "The Orville",
+                  "externalIds": {
+                      "ENTITY_ID": "0",
+                      "imdb": "tt5691552",
+                      "avc_vending_us": "amzn1.dv.gti.eeaef0b9-1c56-0a2f-47c1-2bc360cdf2fc",
+                      "harvey": "34058",
+                      "gti": "amzn1.dv.gti.eeaef0b9-1c56-0a2f-47c1-2bc360cdf2fc"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.f45e0267-1a70-5658-892c-a236160fd8df",
+                  "value": "Orville",
+                  "externalIds": {
+                      "ENTITY_ID": "1",
+                      "imdb": "tt0796345"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.fd0fc214-49cd-5f93-b065-b75b8ec25f49",
+                  "value": "The Orville",
+                  "externalIds": {
+                      "ENTITY_ID": "2",
+                      "c_spire_tv_us": "3269565"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.31f7e4a0-6d60-5832-a57f-080d9e23adf5",
+                  "value": "The Orville",
+                  "externalIds": {
+                      "ontv": "SH026956340000",
+                      "ENTITY_ID": "3",
+                      "tms": "SH026956340000"
+                  }
+              },
+              {
+                  "type": "Video",
+                  "uri": "entity://provider/program/amzn1.p11cat.merged-video.6d9e85fa-7ab1-5430-ba01-8b4aa0d2e391",
+                  "value": "The Orville Preview",
+                  "externalIds": {
+                      "ontv": "SH027550100000",
+                      "ENTITY_ID": "4",
+                      "tms": "SH027550100000"
+                  }
+              },
+              {
+                  "type": "MediaType",
+                  "value": "Tv Show"
+              }
+          ]
+      },
+      "header": {
+          "payloadVersion": "3",
+          "messageId": "01730df2-cf6f-41df-ada2-54f28940eb53",
+          "namespace": "Alexa.RemoteVideoPlayer",
+          "name": "SearchAndPlay",
+          "correlationToken": "09fd49dc-1046-42ef-81d0-c6f98a5f1e94"
+      },
+      "endpoint": {
+          "cookie": {},
+          "scope": {
+              "token": "59a2ecc6610c301c8ee2d707a063b484877682ed",
+              "type": "BearerToken"
+          },
+          "endpointId": "d965a9d3-45a3-4044-88bc-3439fdf81757"
+      }
+  }
+}

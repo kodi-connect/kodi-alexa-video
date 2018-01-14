@@ -3,7 +3,7 @@
 import _ from 'lodash';
 
 import discoveryHandler from './discovery-handler';
-import searchAndPlayHandler from './search-and-play-handler';
+import remoteVideoPlayerHandler from './remote-video-player-handler';
 import playbackHandler from './playback-handler';
 
 const unknownNamespaceHandler = namespace => async () => {
@@ -16,7 +16,7 @@ function getHandler(namespace): (event: Object, context: Object) => Promise<Obje
     case 'Alexa.Discovery':
       return discoveryHandler;
     case 'Alexa.RemoteVideoPlayer':
-      return searchAndPlayHandler;
+      return remoteVideoPlayerHandler;
     case 'Alexa.PlaybackController':
       return playbackHandler;
     default:

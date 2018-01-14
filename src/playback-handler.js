@@ -23,6 +23,25 @@ async function sendCommand(accessToken: string, endpointId: string, commandType:
   return response.data;
 }
 
+// TODO - merge everything into single call with mapping
+async function nextVideo(accessToken: string, endpointId: string) {
+  console.time('nextVideo');
+  await sendCommand(accessToken, endpointId, 'next');
+  console.timeEnd('nextVideo');
+}
+
+async function previousVideo(accessToken: string, endpointId: string) {
+  console.time('previousVideo');
+  await sendCommand(accessToken, endpointId, 'previous');
+  console.timeEnd('previousVideo');
+}
+
+async function startOver(accessToken: string, endpointId: string) {
+  console.time('startOver');
+  await sendCommand(accessToken, endpointId, 'startOver');
+  console.timeEnd('startOver');
+}
+
 async function resumePlayback(accessToken: string, endpointId: string) {
   console.time('resumePlayback');
   await sendCommand(accessToken, endpointId, 'resume');
@@ -57,6 +76,15 @@ export default async function discoveryHandler(event: Object) {
   const endpointId = _.get(event, 'directive.endpoint.endpointId');
 
   switch (playbackOperation) {
+    case 'Next':
+      await nextVideo(accessToken, endpointId);
+      break;
+    case 'Previous':
+      await previousVideo(accessToken, endpointId);
+      break;
+    case 'StartOver':
+      await startOver(accessToken, endpointId);
+      break;
     case 'Play':
       await resumePlayback(accessToken, endpointId);
       break;

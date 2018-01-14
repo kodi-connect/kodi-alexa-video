@@ -1,5 +1,7 @@
 # Kodi Alexa Video Skill
 
+[![CircleCI](https://circleci.com/gh/kodi-connect/kodi-alexa-video.svg?style=svg)](https://circleci.com/gh/kodi-connect/kodi-alexa-video)
+
 Implements [Alexa Video Skill](https://developer.amazon.com/docs/video/understand-the-video-skill-api.html)
 Example [Youtube](https://www.youtube.com/watch?v=BTgooV_YEvg)
 

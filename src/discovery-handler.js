@@ -45,7 +45,7 @@ export default async function discoveryHandler(event: Object) {
           interface: 'Alexa.PlaybackController',
           version: '3',
           type: 'AlexaInterface',
-          supportedOperations: ['Play', 'Pause', 'Stop'],
+          supportedOperations: ['Play', 'Pause', 'Stop', 'StartOver', 'Previous', 'Next', 'Rewind', 'FastForward'],
         },
       ],
       endpointId: device.id,
