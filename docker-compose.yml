@@ -1,11 +1,5 @@
 version: '3'
 services:
-  mongo:
-    image: mongo:3.4.10
-    volumes:
-      - mongo-data:/data/db
-    ports:
-      - '27018:27017'
   app:
     build:
       context: .
@@ -15,16 +9,12 @@ services:
     tty: true
     environment:
       NODE_ENV: development
-      MONGO_URL: mongodb://mongo:27017/kodi
     ports:
       - '3006:3006'
     volumes:
       - .:/home/node/app
       - node-modules:/home/node/app/node_modules
       - aws-credentials:/home/node/.aws
-    depends_on:
-      - mongo
 volumes:
   node-modules:
-  mongo-data:
   aws-credentials:

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const kodiConnectUrl = 'https://kodiconnect.kislan.sk';
 
-type VideoFilter = {|
+export type VideoFilter = {|
   titles: string[],
   collections: string[],
   genres: string[],
@@ -67,7 +67,7 @@ function getEntitiesByType(entities: Object[], type: string): string[] {
     .filter((v, i, arr) => arr.indexOf(v) === i);
 }
 
-function createFilterFromEntities(entities: Object[]): VideoFilter {
+export function createFilterFromEntities(entities: Object[]): VideoFilter {
   const filter: VideoFilter = {
     titles: getEntitiesByType(entities, 'Video'),
     collections: getEntitiesByType(entities, 'Franchise'),
@@ -87,7 +87,7 @@ export default async function remoteVideoPlayerHandler(event: Object) {
   const accessToken = _.get(event, 'directive.endpoint.scope.token');
   const endpointId = _.get(event, 'directive.endpoint.endpointId');
 
-  const filter = createFilterFromEntities(_.get(event, 'directive.payload.entities', {}));
+  const filter = createFilterFromEntities(_.get(event, 'directive.payload.entities', []));
 
   let responseData;
 

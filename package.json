@@ -11,8 +11,9 @@
     "build": "yarn run clean && babel src -d build --source-maps inline",
     "package": "./build-package.sh",
     "deploy": "aws lambda update-function-code --function-name kodi-video-dev --zip-file fileb://package.zip",
-    "test:lint": "eslint src",
-    "test:flow": "flow src",
+    "test:lint": "eslint src tests",
+    "test:flow": "flow src tests",
+    "test:unit": "jest tests",
     "test": "npm-run-all --sequential test:*"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "eslint-plugin-flowtype": "^2.40.1",
     "eslint-plugin-import": "^2.7.0",
     "flow-bin": "^0.62.0",
+    "jest": "^21",
     "nodemon": "^1.14.5",
     "npm-run-all": "^4.1.2",
     "wait-on": "^2.0.2"
