@@ -118,12 +118,6 @@ export default async function remoteVideoPlayerHandler(event: Object) {
 
   const payload = {};
 
-  const requestedTitles = event.directive.payload.entities.filter(e => e.type === 'Video').map(e => e.value);
-
-  console.log('requestedTitles:', requestedTitles);
-
-  // const responseData = await searchAndPlay(accessToken, endpointId, requestedTitles);
-  // console.log(responseData);
 
   return { endpoint, header, payload };
 }

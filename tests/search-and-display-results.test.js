@@ -1,30 +1,52 @@
-import { getFilterFromEventFile } from './utils';
+import moxios from 'moxios';
+
+import { getEventAndFilter, checkHandler } from './utils';
+
+beforeEach(() => {
+  moxios.install();
+});
+
+afterEach(() => {
+  moxios.uninstall();
+});
 
 test('find-comedy-movie-saving-with-tom-hanks', () => {
-  const filter = getFilterFromEventFile('find-comedy-movie-saving-with-tom-hanks.json');
+  const { event, filter } = getEventAndFilter('find-comedy-movie-saving-with-tom-hanks.json');
 
-  expect(filter.titles).toEqual(['Saving', 'Saving You, Saving Me', 'Saving Hope', 'Saving Silverman']);
-  expect(filter.actors).toEqual(['Tom Hanks', 'Lloyd Hanks', 'Benjamin Hanks', 'Dannie Hanks', 'Megan Hanks']);
-  expect(filter.genres).toEqual(['Comedy', 'Comedy drama', 'Musical comedy', 'Romantic comedy']);
-  ['collections', 'roles'].forEach(key => (
-    expect(filter[key]).toEqual([])
-  ));
-  expect(filter.mediaType).toEqual('movie');
-  ['season', 'episode'].forEach(key => (
-    expect(filter[key]).toBeNull()
-  ));
+  const expectFilter = (f) => {
+    expect(f.titles).toEqual(['Saving', 'Saving You, Saving Me', 'Saving Hope', 'Saving Silverman']);
+    expect(f.actors).toEqual(['Tom Hanks', 'Lloyd Hanks', 'Benjamin Hanks', 'Dannie Hanks', 'Megan Hanks']);
+    expect(f.genres).toEqual(['Comedy', 'Comedy drama', 'Musical comedy', 'Romantic comedy']);
+    ['collections', 'roles'].forEach(key => (
+      expect(f[key]).toEqual([])
+    ));
+    expect(f.mediaType).toEqual('movie');
+    ['season', 'episode'].forEach(key => (
+      expect(f[key]).toBeNull()
+    ));
+  };
+
+  expectFilter(filter);
+
+  return checkHandler(event, expectFilter);
 });
 
 test('find-comedy-movie-saving', () => {
-  const filter = getFilterFromEventFile('find-comedy-movie-saving.json');
+  const { event, filter } = getEventAndFilter('find-comedy-movie-saving.json');
 
-  expect(filter.titles).toEqual(['Saving', 'Saving You, Saving Me', 'Saving Hope', 'Saving Silverman']);
-  expect(filter.genres).toEqual(['Comedy', 'Comedy drama', 'Musical comedy', 'Romantic comedy']);
-  ['collections', 'actors', 'roles'].forEach(key => (
-    expect(filter[key]).toEqual([])
-  ));
-  expect(filter.mediaType).toEqual('movie');
-  ['season', 'episode'].forEach(key => (
-    expect(filter[key]).toBeNull()
-  ));
+  const expectFilter = (f) => {
+    expect(f.titles).toEqual(['Saving', 'Saving You, Saving Me', 'Saving Hope', 'Saving Silverman']);
+    expect(f.genres).toEqual(['Comedy', 'Comedy drama', 'Musical comedy', 'Romantic comedy']);
+    ['collections', 'actors', 'roles'].forEach(key => (
+      expect(f[key]).toEqual([])
+    ));
+    expect(f.mediaType).toEqual('movie');
+    ['season', 'episode'].forEach(key => (
+      expect(f[key]).toBeNull()
+    ));
+  };
+
+  expectFilter(filter);
+
+  return checkHandler(event, expectFilter);
 });
