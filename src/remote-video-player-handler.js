@@ -82,6 +82,46 @@ export function createFilterFromEntities(entities: Object[]): VideoFilter {
   return filter;
 }
 
+function parseResponse(responseData: Object): { headerNamespace: string, headerName: string, payload: Object } {
+  if (responseData.status === 'error') {
+    switch (responseData.error) {
+      case 'unreachable_device':
+        return {
+          headerNamespace: 'Alexa',
+          headerName: 'ErrorResponse',
+          payload: {
+            type: 'ENDPOINT_UNREACHABLE',
+            message: 'Unable to reach Kodi because it appears to be offline',
+          },
+        };
+      case 'not_found':
+        return {
+          headerNamespace: 'Alexa.Video',
+          headerName: 'ErrorResponse',
+          payload: {
+            type: 'NOT_SUBSCRIBED',
+            message: 'Content not found',
+          },
+        };
+      default:
+        return {
+          headerNamespace: 'Alexa',
+          headerName: 'ErrorResponse',
+          payload: {
+            type: 'INTERNAL_ERROR',
+            message: 'Unexpected response from Kodi',
+          },
+        };
+    }
+  }
+
+  return {
+    headerNamespace: 'Alexa',
+    headerName: 'Response',
+    payload: {},
+  };
+}
+
 export default async function remoteVideoPlayerHandler(event: Object) {
   const name = _.get(event, 'directive.header.name');
   const accessToken = _.get(event, 'directive.endpoint.scope.token');
@@ -104,6 +144,8 @@ export default async function remoteVideoPlayerHandler(event: Object) {
 
   console.log(responseData);
 
+  const { headerNamespace, headerName, payload } = parseResponse(responseData);
+
   const endpoint = {
     ..._.get(event, 'directive.endpoint'),
   };
@@ -111,13 +153,10 @@ export default async function remoteVideoPlayerHandler(event: Object) {
   const header = {
     messageId: uuid(),
     correlationToken: _.get(event, 'directive.header.correlationToken'),
-    name: 'Response',
-    namespace: 'Alexa',
+    namespace: headerNamespace,
+    name: headerName,
     payloadVersion: '3',
   };
-
-  const payload = {};
-
 
   return { endpoint, header, payload };
 }
