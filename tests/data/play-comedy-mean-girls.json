@@ -119,7 +119,7 @@
           "correlationToken": "7921bdf9-0568-4276-81ae-3e18a0ddb056"
       },
       "endpoint": {
-          "endpointId": "<id>",
+          "endpointId": "dae8138a-8698-45f7-b6f9-faf46088dcf4",
           "cookie": {},
           "scope": {
               "token": "<token>",

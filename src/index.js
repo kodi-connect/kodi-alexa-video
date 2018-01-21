@@ -5,6 +5,7 @@ import _ from 'lodash';
 import discoveryHandler from './discovery-handler';
 import remoteVideoPlayerHandler from './remote-video-player-handler';
 import playbackHandler from './playback-handler';
+import { jsonSchemaValidation } from './validation';
 
 const unknownNamespaceHandler = namespace => async () => {
   console.warn('Unknown namespace:', namespace);
@@ -32,14 +33,18 @@ async function handlerImpl(event, context) {
 
   const namespaceHandler = getHandler(namespace);
 
-  const response = await namespaceHandler(event, context);
+  const responseEvent = await namespaceHandler(event, context);
+
+  const response = { event: responseEvent };
+
+  jsonSchemaValidation(response);
 
   return response;
 }
 
 export function handler(event: Object, context: Object, callback: Function) {
   handlerImpl(event, context).then((response) => {
-    callback(null, { event: response });
+    callback(null, response);
   }, (error) => {
     callback(error);
   });

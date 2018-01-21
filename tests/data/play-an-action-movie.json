@@ -53,7 +53,7 @@
       },
       "endpoint": {
           "cookie": {},
-          "endpointId": "<id>",
+          "endpointId": "dae8138a-8698-45f7-b6f9-faf46088dcf4",
           "scope": {
               "token": "<token>",
               "type": "BearerToken"
