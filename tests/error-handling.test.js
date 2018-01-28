@@ -35,7 +35,7 @@ describe('Error handling', () => {
     });
   });
 
-  test('Not found', () => {
+  test('Unknown command', () => {
     const event = readEvent('play-comedy-mean-girls.json');
 
     return new Promise((resolve, reject) => {
@@ -46,7 +46,7 @@ describe('Error handling', () => {
           return;
         }
 
-        expect(response.event.payload.type).toEqual('NOT_SUBSCRIBED');
+        expect(response.event.payload.type).toEqual('FIRMWARE_OUT_OF_DATE');
 
         resolve();
       });
@@ -54,7 +54,7 @@ describe('Error handling', () => {
       moxios.wait(() => {
         const request = moxios.requests.mostRecent();
 
-        request.respondWith({ status: 200, response: { status: 'error', error: 'not_found' } });
+        request.respondWith({ status: 200, response: { status: 'error', error: 'unknown_command' } });
       });
     });
   });

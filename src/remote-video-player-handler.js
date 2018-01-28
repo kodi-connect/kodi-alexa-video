@@ -39,9 +39,9 @@ async function searchAndPlay(accessToken: string, endpointId: string, filter: Vi
 async function searchAndDisplayResults(accessToken: string, endpointId: string, filter: VideoFilter) {
   const data = {
     id: endpointId,
-    rpc: { type: 'command', commandType: 'searchAndDisplayResults', filter },
+    rpc: { type: 'command', commandType: 'searchAndDisplay', filter },
   };
-  console.time('searchAndPlay');
+  console.time('searchAndDisplayResults');
   const response = await axios({
     method: 'POST',
     url: `${kodiConnectUrl}/kodi/rpc`,
@@ -50,7 +50,7 @@ async function searchAndDisplayResults(accessToken: string, endpointId: string, 
     },
     data,
   });
-  console.timeEnd('searchAndPlay');
+  console.timeEnd('searchAndDisplayResults');
   return response.data;
 }
 
@@ -94,13 +94,13 @@ function parseResponse(responseData: Object): { headerNamespace: string, headerN
             message: 'Unable to reach Kodi because it appears to be offline',
           },
         };
-      case 'not_found':
+      case 'unknown_command':
         return {
-          headerNamespace: 'Alexa.Video',
+          headerNamespace: 'Alexa',
           headerName: 'ErrorResponse',
           payload: {
-            type: 'NOT_SUBSCRIBED',
-            message: 'Content not found',
+            type: 'FIRMWARE_OUT_OF_DATE',
+            message: 'User should update Addon',
           },
         };
       default:

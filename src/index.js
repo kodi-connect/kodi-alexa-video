@@ -37,6 +37,9 @@ async function handlerImpl(event, context) {
 
   const response = { event: responseEvent };
 
+  console.log('Response:');
+  console.log(JSON.stringify(response, null, '  '));
+
   jsonSchemaValidation(response);
 
   return response;

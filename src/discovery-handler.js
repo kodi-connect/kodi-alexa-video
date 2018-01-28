@@ -50,7 +50,7 @@ export default async function discoveryHandler(event: Object) {
       ],
       endpointId: device.id,
       description: 'Device description that\'s shown to the customer',
-      displayCategories: [],
+      displayCategories: ['OTHER'],
       friendlyName: device.name,
       manufacturerName: 'Kodi',
     }));

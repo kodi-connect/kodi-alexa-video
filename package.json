@@ -8,11 +8,11 @@
   "scripts": {
     "clean": "rm -rf build",
     "watch": "babel src -d build --copy-files --watch --source-maps inline",
-    "build": "yarn run clean && babel src -d build --source-maps inline",
+    "build": "yarn run clean && babel src -d build --copy-files --source-maps inline",
     "package": "./build-package.sh",
     "deploy:us": "aws --region us-east-1 lambda update-function-code --function-name kodi-video-dev --zip-file fileb://package.zip",
     "deploy:eu": "aws --region eu-west-1 lambda update-function-code --function-name kodi-video-dev --zip-file fileb://package.zip",
-    "deploy": "npm-run-all --sequential deploy:*",
+    "deploy": "npm-run-all --parallel deploy:*",
     "test:lint": "eslint src tests",
     "test:flow": "flow src && flow tests",
     "test:unit": "jest tests",
