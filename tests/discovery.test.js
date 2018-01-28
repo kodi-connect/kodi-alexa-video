@@ -28,8 +28,8 @@ const event = {
 };
 
 describe('Discovery', () => {
-  test('should discover devices', () => {
-    return new Promise((resolve, reject) => {
+  test('should discover devices', () => (
+    new Promise((resolve, reject) => {
       handler(event, {}, (error, response) => {
         if (error) {
           reject(error);
@@ -48,6 +48,6 @@ describe('Discovery', () => {
 
         request.respondWith({ status: 200, response: [{ id: 'id', name: 'name' }] });
       });
-    });
-  });
+    })
+  ));
 });
