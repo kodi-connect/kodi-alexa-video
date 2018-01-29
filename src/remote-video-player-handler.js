@@ -103,6 +103,12 @@ function parseResponse(responseData: Object): { headerNamespace: string, headerN
             message: 'User should update Addon',
           },
         };
+      case 'not_found': // Legacy support for early versions of Addon
+        return {
+          headerNamespace: 'Alexa',
+          headerName: 'Response',
+          payload: {},
+        };
       default:
         return {
           headerNamespace: 'Alexa',
