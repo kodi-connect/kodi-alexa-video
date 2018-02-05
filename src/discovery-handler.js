@@ -7,7 +7,7 @@ import axios from 'axios';
 const kodiConnectUrl = 'https://kodiconnect.kislan.sk';
 
 async function getDevices(accessToken) {
-  console.time('searchAndPlay');
+  console.time('getDevices');
   const response = await axios({
     method: 'GET',
     url: `${kodiConnectUrl}/kodi/discovery`,
@@ -15,7 +15,7 @@ async function getDevices(accessToken) {
       Authorization: `Bearer ${accessToken}`,
     },
   });
-  console.timeEnd('searchAndPlay');
+  console.timeEnd('getDevices');
 
   return response.data;
 }
@@ -35,19 +35,7 @@ export default async function discoveryHandler(event: Object) {
     const devices = await getDevices(accessToken);
 
     const endpoints = devices.map(device => ({
-      capabilities: [
-        {
-          interface: 'Alexa.RemoteVideoPlayer',
-          type: 'AlexaInterface',
-          version: '3',
-        },
-        {
-          interface: 'Alexa.PlaybackController',
-          version: '3',
-          type: 'AlexaInterface',
-          supportedOperations: ['Play', 'Pause', 'Stop', 'StartOver', 'Previous', 'Next', 'Rewind', 'FastForward'],
-        },
-      ],
+      capabilities: device.capabilities,
       endpointId: device.id,
       description: 'Device description that\'s shown to the customer',
       displayCategories: ['OTHER'],

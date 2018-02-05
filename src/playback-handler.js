@@ -60,7 +60,19 @@ async function stopPlayback(accessToken: string, endpointId: string) {
   console.timeEnd('stopPlayback');
 }
 
-export default async function discoveryHandler(event: Object) {
+async function rewindPlayback(accessToken: string, endpointId: string) {
+  console.time('rewindPlayback');
+  await sendCommand(accessToken, endpointId, 'rewind');
+  console.timeEnd('rewindPlayback');
+}
+
+async function fastForwardPlayback(accessToken: string, endpointId: string) {
+  console.time('fastForwardPlayback');
+  await sendCommand(accessToken, endpointId, 'fastForward');
+  console.timeEnd('fastForwardPlayback');
+}
+
+export default async function playbackHandler(event: Object) {
   const header = {
     messageId: uuid(),
     name: 'Response',
@@ -93,6 +105,12 @@ export default async function discoveryHandler(event: Object) {
       break;
     case 'Stop':
       await stopPlayback(accessToken, endpointId);
+      break;
+    case 'Rewind':
+      await rewindPlayback(accessToken, endpointId);
+      break;
+    case 'FastForward':
+      await fastForwardPlayback(accessToken, endpointId);
       break;
     default:
       throw new Error(`Unknown playback operation: ${playbackOperation}`);
