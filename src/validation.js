@@ -25,7 +25,9 @@ function jsonSchemaValidationImpl(response: Object): void {
 
 export function jsonSchemaValidation(response: Object): void {
   try {
+    console.time('json-validation');
     jsonSchemaValidationImpl(response);
+    console.timeEnd('json-validation');
   } catch (error) {
     if (process.env.NODE_ENV !== 'production') throw error;
   }

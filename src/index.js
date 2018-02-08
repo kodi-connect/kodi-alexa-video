@@ -40,9 +40,6 @@ async function handlerImpl(event, context) {
 
   const response = { context: responseContext, event: responseEvent };
 
-  console.log('Response:');
-  console.log(JSON.stringify(response, null, '  '));
-
   jsonSchemaValidation(response);
 
   return response;
@@ -50,8 +47,11 @@ async function handlerImpl(event, context) {
 
 export function handler(event: Object, context: Object, callback: Function) {
   handlerImpl(event, context).then((response) => {
+    console.log('Response:');
+    console.log(JSON.stringify(response, null, '  '));
     callback(null, response);
   }, (error) => {
+    console.error('Handler failed:', error.message);
     callback(error);
   });
 }
