@@ -40,7 +40,7 @@ async function handlerImpl(event, context) {
 
   const response = { context: responseContext, event: responseEvent };
 
-  jsonSchemaValidation(response);
+  if (process.env.NODE_ENV === 'development') jsonSchemaValidation(response);
 
   return response;
 }
