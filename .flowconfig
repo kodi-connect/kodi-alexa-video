@@ -7,5 +7,5 @@ suppress_comment= \\(.\\|\n\\)*\\$FlowSuppress
 module.system=haste
 
 [libs]
-./flow-typed
+flow-typed
 ./.flowtypes

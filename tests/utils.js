@@ -42,3 +42,27 @@ export function checkHandler(event: Object, expectCheck: Function): Promise<void
     });
   });
 }
+
+export function checkRequestData(event: Object, dataChecker: (data: Object) => void): Promise<void> {
+  return new Promise((resolve, reject) => {
+    handler(event, {}, (error) => {
+      if (error) {
+        console.log(error);
+        reject(error);
+        return;
+      }
+
+      resolve();
+    });
+
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+
+      const data = JSON.parse(request.config.data);
+
+      dataChecker(data);
+
+      request.respondWith({ status: 200, response: { status: 'ok' } });
+    });
+  });
+}

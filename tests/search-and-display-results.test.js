@@ -1,3 +1,5 @@
+// @flow
+
 import moxios from 'moxios';
 
 import { getEventAndFilter, checkHandler } from './utils';

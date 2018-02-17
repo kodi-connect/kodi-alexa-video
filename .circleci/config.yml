@@ -23,6 +23,10 @@ jobs:
             - node_modules
 
       - run:
+          name: Install Flow type definitions
+          command: yarn install_flowdefs
+
+      - run:
           name: Run tests
           command: yarn test
 

@@ -1,3 +1,5 @@
+// @flow
+
 import moxios from 'moxios';
 import { handler } from '../src/index';
 import { readEvent } from './utils';

@@ -2,5 +2,6 @@
 /build
 /.vscode
 /package.zip
+/flow-typed
 
 .DS_Store
