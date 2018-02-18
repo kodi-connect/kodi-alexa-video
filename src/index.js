@@ -7,6 +7,7 @@ import remoteVideoPlayerHandler from './remote-video-player-handler';
 import playbackHandler from './playback-handler';
 import powerControllerHandler from './power-controller-handler';
 import speakerHandler from './speaker-handler';
+import seekControllerHandler from './seek-controller-handler';
 import { jsonSchemaValidation } from './validation';
 
 const unknownNamespaceHandler = namespace => async () => {
@@ -26,6 +27,8 @@ function getHandler(namespace): (event: Object, context: Object) => Promise<Obje
       return powerControllerHandler;
     case 'Alexa.Speaker':
       return speakerHandler;
+    case 'Alexa.SeekController':
+      return seekControllerHandler;
     default:
       return unknownNamespaceHandler(namespace);
   }
