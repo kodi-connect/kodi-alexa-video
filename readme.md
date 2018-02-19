@@ -14,7 +14,8 @@ At the moment, the skill is not certified, and is in Beta testing, so you have t
 
 Also note, that Amazon has made Video Skills available only to US, UK, and DE countries. So you will have to switch country in Amazon settings in order to be able to use this skill.
 
-## Working features (as of version 0.1.8 of the addon)
+## Working features
+*as of version 0.1.8 of the addon*
 - Search and Display [Examples](https://developer.amazon.com/docs/video/video-skill-testing-guide.html#search-content)
   - This will display a list of matched Movies/TVshows
 - Search and Play [Examples](https://developer.amazon.com/docs/video/video-skill-testing-guide.html#play-content)
