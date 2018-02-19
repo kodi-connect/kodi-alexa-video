@@ -14,6 +14,18 @@ At the moment, the skill is not certified, and is in Beta testing, so you have t
 
 Also note, that Amazon has made Video Skills available only to US, UK, and DE countries. So you will have to switch country in Amazon settings in order to be able to use this skill.
 
+## Working features (as of version 0.1.8 of the addon)
+- Search and Display [Examples](https://developer.amazon.com/docs/video/video-skill-testing-guide.html#search-content)
+  - This will display a list of matched Movies/TVshows
+- Search and Play [Examples](https://developer.amazon.com/docs/video/video-skill-testing-guide.html#play-content)
+- Control playback [Examples](https://developer.amazon.com/docs/video/video-skill-testing-guide.html#control-playback)
+- Seeking [Examples](https://developer.amazon.com/docs/device-apis/alexa-seekcontroller.html#adjustseekposition)
+- [Setting](https://developer.amazon.com/docs/device-apis/alexa-speaker.html#setvolume) and [Adjusting](https://developer.amazon.com/docs/device-apis/alexa-speaker.html#adjustvolume) volume, and [muting, unmuting](https://developer.amazon.com/docs/device-apis/alexa-speaker.html#setmute)
+- Turning On/Off - "Alexa, turn On/Off <device_name>" (Device name is taken from KodiConnect page)
+  - This is only available for devices with CEC capability, like RPi, etc. (it checks for `cec-client` binary)
+
+**Note**: If updating Addon which introduces new features, you need to relink the Kodi device in Alexa app. Just unlink the device, and go through discovery again. This is because new versions of Addon now report supported features, to ensure backward compatibility, and seamless user experience. This should be the first step, if some of the features is not working for you.
+
 ## Installation
 - First you need to create account on Kodi Connect Server
   - See installation steps [here](https://github.com/kodi-connect/kodi-connect/blob/master/tutorial/readme.md)
