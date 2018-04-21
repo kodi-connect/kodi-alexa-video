@@ -8,6 +8,7 @@ import playbackHandler from './playback-handler';
 import powerControllerHandler from './power-controller-handler';
 import speakerHandler from './speaker-handler';
 import seekControllerHandler from './seek-controller-handler';
+import authorizationHandler from './authorization-handler';
 import { jsonSchemaValidation } from './validation';
 
 const unknownNamespaceHandler = namespace => async () => {
@@ -29,6 +30,8 @@ function getHandler(namespace): (event: Object, context: Object) => Promise<Obje
       return speakerHandler;
     case 'Alexa.SeekController':
       return seekControllerHandler;
+    case 'Alexa.Authorization':
+      return authorizationHandler;
     default:
       return unknownNamespaceHandler(namespace);
   }
