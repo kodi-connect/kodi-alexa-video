@@ -10,7 +10,7 @@ Connects to the Kodi Connect Server to:
  - Send commands to connected Kodi instances
 
 ## Beta testing
-At the moment, the skill is not certified, and is in Beta testing, so you have to contact me, in order to be included in.
+At the moment, the skill is not certified, and is in Beta testing, so you have to contact me (send me your Amazon/Alexa email), in order to be included in.
 
 Also note, that Amazon has made Video Skills available only to US, UK, and DE countries. So you will have to switch country in Amazon settings in order to be able to use this skill.
 
