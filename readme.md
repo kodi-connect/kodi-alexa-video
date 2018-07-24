@@ -38,3 +38,8 @@ Also note, that Amazon has made Video Skills available only to US, UK, and DE co
 
 ## Architecture overview
 ![Diagram](doc/overview-diagram.png)
+
+## Donation
+If you want to buy me a beer :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X8AL7A9B6XMQ4)
