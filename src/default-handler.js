@@ -107,7 +107,7 @@ export default async function defaultHandler(event: Object) {
 
   switch (eventName) {
     case 'ReportState':
-      return await stateReportHandler(event);
+      return stateReportHandler(event);
     default:
       throw new Error(`Unknown event name: ${eventName}`);
   }
