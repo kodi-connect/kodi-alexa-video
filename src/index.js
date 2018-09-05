@@ -2,6 +2,7 @@
 
 import _ from 'lodash';
 
+import defaultHandler from './default-handler';
 import discoveryHandler from './discovery-handler';
 import remoteVideoPlayerHandler from './remote-video-player-handler';
 import playbackHandler from './playback-handler';
@@ -18,6 +19,8 @@ const unknownNamespaceHandler = namespace => async () => {
 
 function getHandler(namespace): (event: Object, context: Object) => Promise<Object> {
   switch (namespace) {
+    case 'Alexa':
+      return defaultHandler;
     case 'Alexa.Discovery':
       return discoveryHandler;
     case 'Alexa.RemoteVideoPlayer':
@@ -37,7 +40,7 @@ function getHandler(namespace): (event: Object, context: Object) => Promise<Obje
   }
 }
 
-async function handlerImpl(event, context) {
+export async function handlerImpl(event: Object, context: Object) {
   console.log('Request:');
   console.log(JSON.stringify(event, null, '  '));
 
@@ -47,7 +50,7 @@ async function handlerImpl(event, context) {
 
   const { context: responseContext, ...responseEvent } = await namespaceHandler(event, context);
 
-  const response = { context: responseContext, event: responseEvent };
+  const response = responseContext ? { context: responseContext, event: responseEvent } : { event: responseEvent };
 
   if (process.env.NODE_ENV === 'development') jsonSchemaValidation(response);
 

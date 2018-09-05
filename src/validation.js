@@ -7,7 +7,7 @@ import jsonSchemaDraft04 from 'ajv/lib/refs/json-schema-draft-04.json';
 import alexaSmartHomeMessageSchema from './alexa_smart_home_message_schema.json';
 
 function jsonSchemaValidationImpl(response: Object): void {
-  if (['Alexa.Video', 'Alexa.Discovery'].includes(_.get(response, 'event.header.namespace'))) {
+  if (['Alexa.Video', 'Alexa.Discovery', 'Alexa'].includes(_.get(response, 'event.header.namespace'))) {
     // TODO - merge/update Alexa jsonschema when available for Video Skill
     return;
   }

@@ -7,7 +7,7 @@ import { parseResponse } from './utils';
 
 const kodiConnectUrl = 'https://kodiconnect.kislan.sk';
 
-export type VideoFilter = {|
+export type VideoFilter = {
   titles: string[],
   collections: string[],
   genres: string[],
@@ -16,7 +16,7 @@ export type VideoFilter = {|
   mediaType?: ?string,
   season?: ?string,
   episode?: ?string,
-|};
+};
 
 async function searchAndPlay(accessToken: string, endpointId: string, filter: VideoFilter) {
   const data = {

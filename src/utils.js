@@ -2,16 +2,16 @@
 
 import axios from 'axios';
 
-export const kodiConnectUrl = 'https://kodiconnect.kislan.sk';
+import config from './config';
 
-export async function sendCommand(accessToken: string, endpointId: string, commandType: string, additionalData: ?Object) {
+export async function sendRpcMessage(accessToken: string, endpointId: string, type: string, additionalData?: Object): Promise<Object> {
   const data = {
     id: endpointId,
-    rpc: { type: 'command', commandType, ...additionalData },
+    rpc: { type, ...additionalData },
   };
   const response = await axios({
     method: 'POST',
-    url: `${kodiConnectUrl}/kodi/rpc`,
+    url: `${config.kodiConnectUrl}/kodi/rpc`,
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
@@ -19,6 +19,11 @@ export async function sendCommand(accessToken: string, endpointId: string, comma
   });
   console.log(response.data);
   return response.data;
+}
+
+export async function sendCommand(accessToken: string, endpointId: string, commandType: string, additionalData: ?Object) {
+  const data = { commandType, ...additionalData };
+  return sendRpcMessage(accessToken, endpointId, 'command', data);
 }
 
 export function parseResponse(responseData: Object): { headerNamespace: string, headerName: string, payload: Object } {

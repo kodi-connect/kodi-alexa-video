@@ -1,12 +1,12 @@
-FROM node:6.10
+FROM node:8.10
 
 RUN apt-get update && \
   apt-get -y install \
-    zip \
-    groff \
-    libssl-dev \
-    python-pip \
-    python-dev && \
+  zip \
+  groff \
+  libssl-dev \
+  python-pip \
+  python-dev && \
   pip install awscli --upgrade
 
 ENV HOME=/home/node

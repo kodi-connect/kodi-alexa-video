@@ -4,13 +4,13 @@ import _ from 'lodash';
 import uuid from 'uuid/v4';
 import axios from 'axios';
 
-const kodiConnectUrl = 'https://kodiconnect.kislan.sk';
+import config from './config';
 
 async function getDevices(accessToken) {
   console.time('getDevices');
   const response = await axios({
     method: 'GET',
-    url: `${kodiConnectUrl}/kodi/discovery`,
+    url: `${config.kodiConnectUrl}/kodi/discovery`,
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
