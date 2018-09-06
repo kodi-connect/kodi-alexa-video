@@ -2,7 +2,7 @@
 
 import moxios from 'moxios';
 
-import { handler } from '../src/index';
+import { moxiosGetRequest, asyncHandler } from './utils';
 
 beforeEach(() => {
   moxios.install();
@@ -34,31 +34,21 @@ const event = {
 };
 
 describe('Authorization', () => {
-  test('should authorize', () => (
-    new Promise((resolve, reject) => {
-      handler(event, {}, (error, response) => {
-        if (error) {
-          reject(error);
-          return;
-        }
+  test('should authorize', async () => {
+    const p = asyncHandler(event, {});
 
-        console.log(response);
-        resolve();
-      });
+    console.log('Waiting for moxios');
 
-      console.log('Waiting for moxios');
-      moxios.wait(() => {
-        console.log('Moxios wait inside');
-        const request = moxios.requests.mostRecent();
+    const request = await moxiosGetRequest();
 
-        expect(request.url).toBe('https://kodiconnect.kislan.sk/kodi/alexa/authorization');
+    expect(request.url).toBe('https://kodiconnect.kislan.sk/alexa/authorize');
 
-        const data = JSON.parse(request.config.data);
+    const data = JSON.parse(request.config.data);
 
-        expect(data.rpc).toEqual({ type: 'command', commandType: 'reportStateToAlexa' });
+    expect(data).toEqual({ region: 'us', code: 'RHZEbholRXCKFvUecEWU' });
 
-        request.respondWith({ status: 200, response: { status: 'ok' } });
-      });
-    })
-  ));
+    await request.respondWith({ status: 200, response: { status: 'ok' } });
+
+    await p;
+  });
 });

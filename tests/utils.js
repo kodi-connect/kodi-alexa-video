@@ -12,7 +12,7 @@ export function readEvent(fileName: string): Object {
   return JSON.parse(fs.readFileSync(path.join(path.resolve(__dirname), 'data', fileName)).toString());
 }
 
-export function getEventAndFilter(fileName: string): { event: Object, filter: VideoFilter} {
+export function getEventAndFilter(fileName: string): { event: Object, filter: VideoFilter } {
   const event = readEvent(fileName);
   const entities = _.get(event, 'directive.payload.entities');
   const filter = createFilterFromEntities(entities);
@@ -63,6 +63,31 @@ export function checkRequestData(event: Object, dataChecker: (data: Object) => v
       dataChecker(data);
 
       request.respondWith({ status: 200, response: { status: 'ok' } });
+    });
+  });
+}
+
+export function moxiosGetRequest(): Promise<Object> {
+  return new Promise((resolve, reject) => {
+    moxios.wait(() => {
+      try {
+        resolve(moxios.requests.mostRecent());
+      } catch (error) {
+        reject(error);
+      }
+    });
+  });
+}
+
+export function asyncHandler(event: Object, context: Object): Promise<Object> {
+  return new Promise((resolve, reject) => {
+    handler(event, context, (error, response) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+
+      resolve(response);
     });
   });
 }

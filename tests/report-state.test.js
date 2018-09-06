@@ -2,7 +2,7 @@
 
 import moxios from 'moxios';
 
-import { handler } from '../src/index';
+import { asyncHandler, moxiosGetRequest } from './utils';
 
 beforeEach(() => {
   moxios.install();
@@ -33,71 +33,47 @@ const event = {
   },
 };
 
-// const expectedResponse = {
-//   event: {
-//     header: {
-//       namespace: 'Alexa',
-//       name: 'DeferredResponse',
-//       correlationToken: event.directive.header.correlationToken,
-//       payloadVersion: '3',
-//     },
-//     payload: {
-//       estimatedDeferralInSeconds: 8,
-//     },
-//   },
-// };
-
 const expectedResponse = {
+  context: {
+    properties: [],
+  },
   event: {
     header: {
       namespace: 'Alexa',
-      name: 'DeferredResponse',
+      name: 'StateReport',
       correlationToken: event.directive.header.correlationToken,
       payloadVersion: '3',
     },
-    payload: {
-      estimatedDeferralInSeconds: 8,
-    },
+    endpoint: event.directive.endpoint,
+    payload: {},
   },
 };
 
 describe('Report state', () => {
-  test('should report state', () => (
-    new Promise((resolve, reject) => {
-      handler(event, {}, (error, response) => {
-        if (error) {
-          reject(error);
-          return;
-        }
+  test('should report state', async () => {
+    const p = asyncHandler(event, {});
 
-        expect(response).toEqual({
-          ...expectedResponse,
-          event: {
-            ...expectedResponse.event,
-            header: {
-              ...expectedResponse.event.header,
-              messageId: response.event.header.messageId,
-            },
-          },
-        });
+    const request = await moxiosGetRequest();
 
-        console.log(response);
-        resolve();
-      });
+    expect(request.url).toBe('https://kodiconnect.kislan.sk/kodi/rpc');
 
-      console.log('Waiting for moxios');
-      moxios.wait(() => {
-        console.log('Moxios wait inside');
-        const request = moxios.requests.mostRecent();
+    const data = JSON.parse(request.config.data);
 
-        expect(request.url).toBe('https://kodiconnect.kislan.sk/kodi/rpc');
+    expect(data.rpc).toEqual({ type: 'state' });
 
-        const data = JSON.parse(request.config.data);
+    await request.respondWith({ status: 200, response: { status: 'ok', state: [] } });
 
-        expect(data.rpc).toEqual({ type: 'command', commandType: 'reportState' });
+    const response = await p;
 
-        request.respondWith({ status: 200, response: { status: 'ok' } });
-      });
-    })
-  ));
+    expect(response).toEqual({
+      ...expectedResponse,
+      event: {
+        ...expectedResponse.event,
+        header: {
+          ...expectedResponse.event.header,
+          messageId: response.event.header.messageId,
+        },
+      },
+    });
+  });
 });

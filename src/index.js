@@ -52,7 +52,7 @@ export async function handlerImpl(event: Object, context: Object) {
 
   const response = responseContext ? { context: responseContext, event: responseEvent } : { event: responseEvent };
 
-  if (process.env.NODE_ENV === 'development') jsonSchemaValidation(response);
+  if (process.env.NODE_ENV !== 'production') jsonSchemaValidation(response);
 
   return response;
 }
