@@ -68,11 +68,23 @@ function getEntitiesByType(entities: Object[], type: string): string[] {
     .filter((v, i, arr) => arr.indexOf(v) === i);
 }
 
+const GENRE_MAPPING = {
+  'science fiction': ['sci-fi', 'sci fi'],
+};
+
+export function mapGenres(genres: string[]) {
+  return genres.reduce((acc, genre) => ([
+    ...acc,
+    genre,
+    ...(GENRE_MAPPING[genre.toLowerCase()] || []),
+  ]), []);
+}
+
 export function createFilterFromEntities(entities: Object[]): VideoFilter {
   const filter: VideoFilter = {
     titles: getEntitiesByType(entities, 'Video'),
     collections: getEntitiesByType(entities, 'Franchise'),
-    genres: getEntitiesByType(entities, 'Genre'),
+    genres: mapGenres(getEntitiesByType(entities, 'Genre')),
     actors: getEntitiesByType(entities, 'Actor'),
     roles: getEntitiesByType(entities, 'Character'),
     mediaType: getEntityByType(entities, 'MediaType'),
