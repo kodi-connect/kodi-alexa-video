@@ -27,6 +27,8 @@ Pick which Echo devices can control the Kodi instance.
 ![Diagram](img/08-connect-device.png)
 
 This page just shows you the list of connected Kodi instances. Just click the last link, to go back to skill overview.
+<br/>
+*!!! Note: There is probably a bug in Alexa app, because after this step, there are no linked devices in the list, but if you continue to the next step, everything works as expected.*
 ![Diagram](img/09-linked-devices.png)
 
 All is set up now, and you can start asking Alexa to play movies and/or tv shows on your Kodi instance.
