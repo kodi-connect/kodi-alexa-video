@@ -10,6 +10,7 @@ tmpdir="$(mktemp -d)"
 (cd "${root_dir}" && yarn build)
 
 cp -r "${root_dir}/package.json" "${tmpdir}"
+cp -r "${root_dir}/yarn.lock" "${tmpdir}"
 cp -r "${root_dir}/build/"* "${tmpdir}"
 
 pushd "${tmpdir}"
