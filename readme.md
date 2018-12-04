@@ -32,6 +32,8 @@ Also note, that Amazon has made Video Skills available only to US, UK, and DE co
   - See installation steps [here](https://github.com/kodi-connect/kodi-connect/blob/master/tutorial/readme.md)
 - After that, you have to install Kodi Connect Addon on your Kodi instance
   - See installation steps [here](https://github.com/kodi-connect/kodi-connect-addon/blob/master/tutorial/readme.md)
+- Before enabling the Alexa skill, you need to apply for the Beta test
+  - See installation steps [here](https://github.com/kodi-connect/kodi-connect/blob/master/tutorial-alexa/readme.md)
 - Next step is enabling Kodi Video Skill on your Alexa
   - See installation steps [here](tutorial/readme.md)
 
