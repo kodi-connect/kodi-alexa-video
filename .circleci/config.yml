@@ -33,3 +33,7 @@ jobs:
       - run:
           name: Build package
           command: yarn package
+
+      - store_artifacts:
+          path: package.zip
+          destination: packages
