@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 const KODI_CONNECT_URL = process.env.KODI_CONNECT_URL || 'https://kodiconnect.kislan.sk';
+const VERSION = '<version>';
 
 exports.handler = (event, context, callback) => {
   console.log(JSON.stringify(event, null, '  '));
@@ -12,6 +13,7 @@ exports.handler = (event, context, callback) => {
     },
     meta: {
       region: (process.env.AWS_REGION || process.env.DEFAULT_AWS_REGION || 'us-east-1'),
+      version: VERSION,
     },
   };
 

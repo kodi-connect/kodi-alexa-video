@@ -60,9 +60,10 @@ jobs:
       - attach_workspace:
           at: /tmp/package
 
-      - aws-s3/copy:
-          from: /tmp/package/kodi-alexa-video-package.zip
-          to: 's3://kodi-connect/kodi-alexa-video/kodi-alexa-video-package.zip'
+      - aws-s3/sync:
+          from: /tmp/package
+          to: 's3://kodi-connect/kodi-alexa-video'
+          overwrite: true
 
 
 workflows:

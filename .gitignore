@@ -1,7 +1,7 @@
 /node_modules
 /.vscode
 /.idea
-/package.zip
+/kodi-alexa-video-package-*.zip
 /yarn-error.log
 
 .DS_Store
