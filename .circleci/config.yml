@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Install required packages
+          command: apt-get update && apt-get install -y zip
+
       - restore_cache:
           key: node-modules-{{ checksum ".circleci/config.yml" }}-{{ checksum "yarn.lock" }}-{{ checksum "package.json" }}
 
