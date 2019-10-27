@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.10
+      - image: node:8.10
     steps:
       - checkout
 
@@ -23,12 +23,12 @@ jobs:
             - node_modules
 
       - run:
-          name: Install Flow type definitions
-          command: yarn install_flowdefs
+          name: Run eslint
+          command: yarn test:lint
 
       - run:
           name: Run tests
-          command: yarn test
+          command: yarn test:unit
 
       - run:
           name: Build package
