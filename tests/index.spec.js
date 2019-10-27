@@ -1,7 +1,7 @@
 const moxios = require('moxios');
 
 const { asyncHandler, moxiosGetRequest } = require('./util');
-const { VERSION } = require('../src')
+const { VERSION } = require('../src');
 
 beforeEach(() => {
   moxios.install();
