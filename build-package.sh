@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 
 root_dir="$(cd $(dirname $0) && pwd -P)"
-package_filepath="${root_dir}/package.zip"
+package_filepath="${root_dir}/kodi-alexa-video-package.zip"
 
 rm -fv "${package_filepath}"
 

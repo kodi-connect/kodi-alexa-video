@@ -39,4 +39,4 @@ jobs:
           command: yarn package
 
       - store_artifacts:
-          path: package.zip
+          path: kodi-alexa-video-package.zip
