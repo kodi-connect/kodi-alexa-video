@@ -1,6 +1,7 @@
 const moxios = require('moxios');
 
 const { asyncHandler, moxiosGetRequest } = require('./util');
+const { VERSION } = require('../src')
 
 beforeEach(() => {
   moxios.install();
@@ -50,7 +51,7 @@ describe('Handler', () => {
         context,
         event,
       },
-      meta: { region: 'us-east-1' },
+      meta: { region: 'us-east-1', version: VERSION },
     });
 
     await request.respondWith({ status: 200, response: { status: 'ok' } });
