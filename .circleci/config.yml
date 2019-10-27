@@ -40,3 +40,4 @@ jobs:
 
       - store_artifacts:
           path: kodi-alexa-video-package.zip
+          destination: kodi-alexa-video-package
