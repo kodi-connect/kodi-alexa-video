@@ -2,6 +2,7 @@
   "extends": [
     "eslint-config-airbnb-base"
   ],
+  "plugins": ["jest"],
   "env": {
     "node": true
   },
@@ -10,5 +11,16 @@
     "no-console": 0,
     "no-restricted-syntax": 0,
     "no-await-in-loop": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "tests/*.spec.js",
+        "tests/util.js"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }

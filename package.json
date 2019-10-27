@@ -10,13 +10,18 @@
     "watch": "babel src -d build --copy-files --watch --source-maps inline",
     "build": "yarn run clean && babel src -d build --copy-files --source-maps inline",
     "package": "./build-package.sh",
-    "test": "eslint src"
+    "test:lint": "eslint src tests",
+    "test:unit": "jest tests"
   },
   "dependencies": {
     "axios": "^0.19.0"
   },
   "devDependencies": {
     "eslint": "^4.14.0",
-    "eslint-config-airbnb-base": "^13.1.0"
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.21.0",
+    "jest": "^24.9.0",
+    "moxios": "^0.4.0"
   }
 }
