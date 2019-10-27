@@ -7,17 +7,15 @@ rm -fv "${package_filepath}"
 
 tmpdir="$(mktemp -d)"
 
-(cd "${root_dir}" && yarn build)
-
-cp -r "${root_dir}/package.json" "${tmpdir}"
-cp -r "${root_dir}/yarn.lock" "${tmpdir}"
-cp -r "${root_dir}/build/"* "${tmpdir}"
+cp -v "${root_dir}/package.json" "${tmpdir}"
+cp -v "${root_dir}/yarn.lock" "${tmpdir}"
+cp -v "${root_dir}/src/index.js" "${tmpdir}"
 
 pushd "${tmpdir}"
 
 NODE_ENV=production yarn install
 
-zip -r "${package_filepath}" . -x "__test__" -x "*/*.test.js"
+zip -r "${package_filepath}" .
 
 popd
 
